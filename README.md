@@ -18,6 +18,14 @@ app, using modern technologies, such as [.NET Core 6](https://dotnet.microsoft.c
 > 
 "Science isn't about WHY. It's about WHY NOT. Why is so much of our science dangerous? Why not marry safe science if you love it so much. In fact, why not invent a special safety door that won't hit you on the butt on the way out, because you are fired." — Cave Johnson (Portal 2)
 
+## Supported audio backends
+- [x] Pipewire (via pipewire-pulse)
+- [x] PulseAudio
+- [ ] ALSA
+- [ ] JACK
+- [ ] Windows Audio
+- [ ] Core Audio
+
 ## Building project
 
 Get a dotnet core package, and run it via `dotnet run`.

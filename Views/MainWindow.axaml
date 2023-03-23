@@ -40,7 +40,7 @@
                    VerticalAlignment="Center"
                    Height="30"
                    FontSize="20"/>
-        <Grid ShowGridLines="True">
+        <Grid ShowGridLines="False">
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>

@@ -1,0 +1,209 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FunnyVolumeApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="{Binding WindowWidth}" d:DesignHeight="{Binding WindowHeight}"
+        x:Class="FunnyVolumeApp.Views.MainWindow"
+        Icon="/Assets/audio-on.ico"
+        Title="Advanced Volume Control"
+        WindowStartupLocation="CenterScreen"
+        CanResize="true"
+        Width="{Binding WindowWidth}"
+        Height="{Binding WindowHeight}"
+        MinWidth="{Binding WindowWidth}"
+        MinHeight="{Binding WindowHeight}"
+        Background="Transparent"
+        TransparencyLevelHint="None"
+        TransparencyBackgroundFallback="White">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <StackPanel VerticalAlignment="Center"
+                Margin="5">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    FallbackColor="White"
+                    BackgroundSource="Digger"
+                    TintColor="White"
+                    TintOpacity="1"
+                    MaterialOpacity="0.95"
+                />
+                
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <TextBlock Text="{Binding Greeting}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Height="30"
+                   FontSize="20"/>
+        <Grid ShowGridLines="True">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            
+            <!-- Row 1 (1-10) -->
+            <RadioButton 
+                Grid.Row="0"
+                Grid.Column="0"
+                Name="FirstBtn"
+                Content="1"
+                Checked="Button_OnClick"
+                x:Name="Button_one"
+                
+                />
+            <RadioButton Grid.Row="0" Grid.Column="1" Checked="Button_OnClick">2</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="2" Checked="Button_OnClick">3</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="3" Checked="Button_OnClick">4</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="4" Checked="Button_OnClick">5</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="5" Checked="Button_OnClick">6</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="6" Checked="Button_OnClick">7</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="7" Checked="Button_OnClick">8</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="8" Checked="Button_OnClick">9</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="9" Checked="Button_OnClick">10</RadioButton>
+            
+            <!-- Row 2 (11-20) -->
+            <RadioButton Grid.Row="1" Grid.Column="0" Checked="Button_OnClick" >11</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="1" Checked="Button_OnClick" >12</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="2" Checked="Button_OnClick" >13</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="3" Checked="Button_OnClick" >14</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="4" Checked="Button_OnClick" >15</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="5" Checked="Button_OnClick" >16</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="6" Checked="Button_OnClick" >17</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="7" Checked="Button_OnClick" >18</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="8" Checked="Button_OnClick" >19</RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="9" Checked="Button_OnClick" >20</RadioButton>
+            
+            <!-- Row 3 (21-30) -->
+            <RadioButton Grid.Row="2" Grid.Column="0" Checked="Button_OnClick" >21</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="1" Checked="Button_OnClick" >22</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="2" Checked="Button_OnClick" >23</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="3" Checked="Button_OnClick" >24</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="4" Checked="Button_OnClick" >25</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="5" Checked="Button_OnClick" >26</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="6" Checked="Button_OnClick" >27</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="7" Checked="Button_OnClick" >28</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="8" Checked="Button_OnClick" >29</RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="9" Checked="Button_OnClick" >30</RadioButton>
+            
+            <!-- Row 4 (31-40) -->
+            <RadioButton Grid.Row="3" Grid.Column="0" Checked="Button_OnClick" >31</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="1" Checked="Button_OnClick" >32</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="2" Checked="Button_OnClick" >33</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="3" Checked="Button_OnClick" >34</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="4" Checked="Button_OnClick" >35</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="5" Checked="Button_OnClick" >36</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="6" Checked="Button_OnClick" >37</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="7" Checked="Button_OnClick" >38</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="8" Checked="Button_OnClick" >39</RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="9" Checked="Button_OnClick" >40</RadioButton>
+            
+            <!-- Row 5 (41-50) -->
+            <RadioButton Grid.Row="4" Grid.Column="0" Checked="Button_OnClick" >41</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Checked="Button_OnClick" >42</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="2" Checked="Button_OnClick" >43</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="3" Checked="Button_OnClick" >44</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="4" Checked="Button_OnClick" >45</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="5" Checked="Button_OnClick" >46</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="6" Checked="Button_OnClick" >47</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="7" Checked="Button_OnClick" >48</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="8" Checked="Button_OnClick" >49</RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="9" Checked="Button_OnClick" >50</RadioButton>
+
+            <!-- Row 6 (51-60) -->
+            <RadioButton Grid.Row="5" Grid.Column="0" Checked="Button_OnClick" >51</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="1" Checked="Button_OnClick" >52</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="2" Checked="Button_OnClick" >53</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="3" Checked="Button_OnClick" >54</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="4" Checked="Button_OnClick" >55</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="5" Checked="Button_OnClick" >56</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="6" Checked="Button_OnClick" >57</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="7" Checked="Button_OnClick" >58</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="8" Checked="Button_OnClick" >59</RadioButton>
+            <RadioButton Grid.Row="5" Grid.Column="9" Checked="Button_OnClick" >60</RadioButton>
+
+            <!-- Row 7 (61-70) -->
+            <RadioButton Grid.Row="6" Grid.Column="0" Checked="Button_OnClick" >61</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="1" Checked="Button_OnClick" >62</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="2" Checked="Button_OnClick" >63</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="3" Checked="Button_OnClick" >64</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="4" Checked="Button_OnClick" >65</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="5" Checked="Button_OnClick" >66</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="6" Checked="Button_OnClick" >67</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="7" Checked="Button_OnClick" >68</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="8" Checked="Button_OnClick" >69</RadioButton>
+            <RadioButton Grid.Row="6" Grid.Column="9" Checked="Button_OnClick" >70</RadioButton>
+
+            <!-- Row 8 (71-80) -->
+            <RadioButton Grid.Row="7" Grid.Column="0" Checked="Button_OnClick" >71</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="1" Checked="Button_OnClick" >72</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="2" Checked="Button_OnClick" >73</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="3" Checked="Button_OnClick" >74</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="4" Checked="Button_OnClick" >75</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="5" Checked="Button_OnClick" >76</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="6" Checked="Button_OnClick" >77</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="7" Checked="Button_OnClick" >78</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="8" Checked="Button_OnClick" >79</RadioButton>
+            <RadioButton Grid.Row="7" Grid.Column="9" Checked="Button_OnClick" >80</RadioButton>
+
+            <!-- Row 9 (81-90) -->
+            <RadioButton Grid.Row="8" Grid.Column="0" Checked="Button_OnClick" >81</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="1" Checked="Button_OnClick" >82</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="2" Checked="Button_OnClick" >83</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="3" Checked="Button_OnClick" >84</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="4" Checked="Button_OnClick" >85</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="5" Checked="Button_OnClick" >86</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="6" Checked="Button_OnClick" >87</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="7" Checked="Button_OnClick" >88</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="8" Checked="Button_OnClick" >89</RadioButton>
+            <RadioButton Grid.Row="8" Grid.Column="9" Checked="Button_OnClick" >90</RadioButton>
+
+            <!-- Row 10 (91-100) -->
+            <RadioButton Grid.Row="9" Grid.Column="0" Checked="Button_OnClick" >91</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="1" Checked="Button_OnClick" >92</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="2" Checked="Button_OnClick" >93</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="3" Checked="Button_OnClick" >94</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="4" Checked="Button_OnClick" >95</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="5" Checked="Button_OnClick" >96</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="6" Checked="Button_OnClick" >97</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="7" Checked="Button_OnClick" >98</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="8" Checked="Button_OnClick" >99</RadioButton>
+            <RadioButton Grid.Row="9" Grid.Column="9" Checked="Button_OnClick" >100</RadioButton>
+
+            
+
+            
+        </Grid>
+
+        <CheckBox HorizontalAlignment="Center">Mute</CheckBox>
+    </StackPanel>
+    
+
+</Window>

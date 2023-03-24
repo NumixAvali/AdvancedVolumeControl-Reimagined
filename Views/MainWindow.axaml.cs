@@ -15,22 +15,42 @@ namespace FunnyVolumeApp.Views
 
 		public void SetVolume(int level)
 		{
-			string command = $"pactl set-sink-volume @DEFAULT_SINK@ {level}%"; // Replace with your command
-			Process process = new Process()
+			switch (Environment.OSVersion.Platform)
 			{
-				StartInfo = new ProcessStartInfo()
-				{
-					FileName = "/bin/bash",
-					Arguments = $"-c \"{command}\"",
-					RedirectStandardOutput = true,
-					UseShellExecute = false,
-					CreateNoWindow = true
-				}
-			};
-			process.Start();
-			string result = process.StandardOutput.ReadToEnd();
-			process.WaitForExit();
-			// Console.WriteLine(result);
+				case PlatformID.Win32NT:
+					// Console.WriteLine("Windows platform detected");
+					break;
+				case PlatformID.Unix:
+					if (OperatingSystem.IsMacOS())
+					{
+						Console.WriteLine("Mac platform is unsupported");
+					}
+					else
+					{
+						// Console.WriteLine("Linux platform detected");
+						string command = $"pactl set-sink-volume @DEFAULT_SINK@ {level}%";
+						Process process = new Process()
+						{
+							StartInfo = new ProcessStartInfo()
+							{
+								FileName = "/bin/bash",
+								Arguments = $"-c \"{command}\"",
+								RedirectStandardOutput = true,
+								UseShellExecute = false,
+								CreateNoWindow = true
+							}
+						};
+						process.Start();
+						string result = process.StandardOutput.ReadToEnd();
+						process.WaitForExit();
+						// Console.WriteLine(result);
+
+					}
+					break;
+				default:
+					Console.WriteLine("Unknown platform detected");
+					break;
+			}
 			
 		}
 
@@ -43,14 +63,6 @@ namespace FunnyVolumeApp.Views
 				// Console.WriteLine($"Selected option: {selectedOption}");
 				SetVolume(Convert.ToInt32(selectedOption));
 			}
-			/*
-			var objRef = e.Source.InteractiveParent;
-			Console.WriteLine("Clicked!");
-			Console.WriteLine("Btn name is: {0}",objRef);
-			// Process.Start("uname -a");
-			SetVolume(10);
-			// throw new System.NotImplementedException();
-			*/
 		}
 	}
 	

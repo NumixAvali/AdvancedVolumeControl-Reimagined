@@ -202,7 +202,11 @@
             
         </Grid>
 
-        <CheckBox HorizontalAlignment="Center">Mute</CheckBox>
+        <CheckBox 
+            HorizontalAlignment="Center"
+            Checked="MuteChecked"
+            Unchecked="MuteUnchecked"
+            >Mute</CheckBox>
     </StackPanel>
     
 

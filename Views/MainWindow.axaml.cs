@@ -56,12 +56,11 @@ namespace FunnyVolumeApp.Views
 					}
 					break;
 				default:
-					Console.WriteLine("Unknown platform detected");
+					Console.WriteLine("Unknown platform detected. Can't operate.");
 					break;
 			}
-			
 		}
-
+		
 		private void Button_OnClick(object sender, RoutedEventArgs e)
 		{
 			var radioButton = (RadioButton)sender;
@@ -72,6 +71,81 @@ namespace FunnyVolumeApp.Views
 				SetVolume(Convert.ToInt32(selectedOption));
 			}
 		}
+
+		private void MuteChecked(object? sender, RoutedEventArgs e)
+		{
+			switch (Environment.OSVersion.Platform)
+			{
+				case PlatformID.Win32NT:
+					// Console.WriteLine("Windows platform detected");
+					break;
+				case PlatformID.Unix:
+					if (OperatingSystem.IsMacOS())
+					{
+						Console.WriteLine("Mac platform is unsupported.");
+					}
+					else
+					{
+						// Console.WriteLine("Linux platform detected");
+						string command = "pactl set-sink-mute @DEFAULT_SINK@ 1";
+						Process process = new Process()
+						{
+							StartInfo = new ProcessStartInfo()
+							{
+								FileName = "/bin/bash",
+								Arguments = $"-c \"{command}\"",
+								RedirectStandardOutput = true,
+								UseShellExecute = false,
+								CreateNoWindow = true
+							}
+						};
+						process.Start();
+						process.WaitForExit();
+					}
+
+					break;
+				default:
+					Console.WriteLine("Unknown platform detected. Can't operate.");
+					break;
+			}
+		}
+
+		private void MuteUnchecked(object? sender, RoutedEventArgs e)
+		{
+			switch (Environment.OSVersion.Platform)
+			{
+				case PlatformID.Win32NT:
+					// Console.WriteLine("Windows platform detected");
+					break;
+				case PlatformID.Unix:
+					if (OperatingSystem.IsMacOS())
+					{
+						Console.WriteLine("Mac platform is unsupported.");
+					}
+					else
+					{
+						// Console.WriteLine("Linux platform detected");
+						string command = $"pactl set-sink-mute @DEFAULT_SINK@ 0";
+						Process process = new Process()
+						{
+							StartInfo = new ProcessStartInfo()
+							{
+								FileName = "/bin/bash",
+								Arguments = $"-c \"{command}\"",
+								RedirectStandardOutput = true,
+								UseShellExecute = false,
+								CreateNoWindow = true
+							}
+						};
+						process.Start();
+						process.WaitForExit();
+
+					}
+					break;
+				default:
+					Console.WriteLine("Unknown platform detected. Can't operate.");
+					break;
+			}
+		}
 	}
-	
 }

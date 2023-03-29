@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using NAudio.CoreAudioApi;
 
 namespace FunnyVolumeApp.Views
 {
@@ -19,6 +20,13 @@ namespace FunnyVolumeApp.Views
 			{
 				case PlatformID.Win32NT:
 					// Console.WriteLine("Windows platform detected");
+					var deviceEnumerator = new MMDeviceEnumerator();
+					var defaultDevice = deviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+
+					// ReSharper disable once PossibleLossOfFraction
+					float applicableVolume = level / 100;
+					
+					defaultDevice.AudioEndpointVolume.MasterVolumeLevelScalar = applicableVolume;
 					break;
 				case PlatformID.Unix:
 					if (OperatingSystem.IsMacOS())
